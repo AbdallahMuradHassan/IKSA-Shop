@@ -2,10 +2,11 @@
     width: 100px;
     height: 60px;
     color: rgb(33, 116, 133);
-    background-color: beige;
+    background-color: #eaeae2;
     border-radius: 15%;
-    padding: 15px, 15px, 5px, 5px;
-    margin: 7%;
+    margin: 5px;
+    padding: 15%;
+    font-size: x-large;
 }
 
 image {
