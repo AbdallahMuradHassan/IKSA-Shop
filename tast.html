@@ -1,0 +1,26 @@
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div>
+
+        <h1>welcom to first task </h1>
+        <div class="divstyle"> this is the pragraph </div>
+        <img id="myImageId" src="../SC.jpeg" alt="This image illustrates how sensors work in cars." width="500"
+            height="300">
+        <button onclick="show_hidefun"> Show and Hide button</button>
+
+    </div>
+</body>
+<footer>
+    <script>
+        function show_hidefun() {
+            if (document.getElementById('myImageId').style.visibility == "hidden")
+                document.getElementById('myImageId').style.visibility = 'visible';
+            else
+                document.getElementById('myImageId').style.visibility = "hidden";
+        }
+
+    </script>
+</footer>
