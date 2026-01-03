@@ -1,120 +1,123 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Template</title>
     <link rel="stylesheet" href="main.css" />
 </head>
+
 <body>
 
-<header class="header">
-    <div class="logo">Brand</div>
+    <header class="header">
+        <div class="logo"><img src="./imges/logo.jpg" /></div>
 
-    <nav class="nav">
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <a class="btn btn--primary" href="#contact">Get Started</a>
-</header>
-
-<main>
-    <section class="hero" id="about">
-        <div class="container hero__grid">
-            <div class="hero__content">
-                <h1 class="hero__title">Landing</h1>
-                <p class="hero__desc">
-                    Test
-                </p>
-
-                <div class="hero__actions">
-                    <a class="btn btn--light" href="#features">Explore Features</a>
-                    <a class="btn btn--ghost" href="#contact">Contact Us</a>
-                </div>
-            </div>
-
-            <div class="hero__card">
-                <h3>Quick Highlights</h3>
-                <ul class="list">
-                    <li>SCSS structure clean</li>
-                    <li>Responsive ready</li>
-                    <li>Buttons + Components</li>
-                    <li>Grid + Flex patterns</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-head">
-                <h2>Features</h2>
-                <p>شبكة Features جاهزة مع Grid + Cards.</p>
-            </div>
-
-            <div class="features__grid">
-                <article class="card">
-                    <h3>Fast Layout</h3>
-                    <p>Grid لتقسيم الصفحة و Flex لترتيب التفاصيل.</p>
-                </article>
-                <article class="card">
-                    <h3>Reusable Buttons</h3>
-                    <p>أزرار موحّدة بأساليب مختلفة.</p>
-                </article>
-                <article class="card">
-                    <h3>Responsive</h3>
-                    <p>Breakpoints جاهزة Tablet / Desktop.</p>
-                </article>
-                <article class="card">
-                    <h3>Clean SCSS</h3>
-                    <p>Variables + Mixins + Components.</p>
-                </article>
-                <article class="card">
-                    <h3>Accessible</h3>
-                    <p>Focus styles جاهزة للروابط والأزرار.</p>
-                </article>
-                <article class="card">
-                    <h3>Easy Theming</h3>
-                    <p>غيّر الألوان من ملف variables فقط.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta" id="contact">
-        <div class="container cta__box">
-            <div>
-                <h2>جاهز تبدأ؟</h2>
-                <p>نموذج CTA بسيط. ركّز على فعل واحد واضح.</p>
-            </div>
-            <a class="btn btn--primary" href="#">Start Now</a>
-        </div>
-    </section>
-</main>
-
-<footer class="footer">
-    <div class="container footer__grid">
-        <div>
-            <div class="logo logo--footer">Brand</div>
-            <p class="muted">قالب تعليمي للتدريب على SCSS structure.</p>
-        </div>
-
-        <div class="footer__links">
+        <nav class="nav">
             <a href="#features">Features</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
-        </div>
+        </nav>
 
-        <div class="footer__copy muted">
-            © <span id="y"></span> Brand. All rights reserved.
-        </div>
-    </div>
-</footer>
+        <a class="btn btn--primary" href="#contact">Get Started</a>
+    </header>
 
-<script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+    <main>
+        <section class="hero" id="about">
+            <div class="container hero__grid">
+                <div class="hero__content">
+                    <h1 class="hero__title">Landing</h1>
+                    <p class="hero__desc">
+                        Test
+                    </p>
+
+                    <div class="hero__actions">
+                        <a class="btn btn--light" href="#features">Explore Features</a>
+                        <a class="btn btn--ghost" href="#contact">Contact Us</a>
+                    </div>
+                </div>
+
+                <div class="hero__card">
+                    <h3>Quick Highlights</h3>
+                    <ul class="list">
+                        <li>SCSS structure clean</li>
+                        <li>Responsive ready</li>
+                        <li>Buttons + Components</li>
+                        <li>Grid + Flex patterns</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Features</h2>
+                    <p>شبكة Features جاهزة مع Grid + Cards.</p>
+                </div>
+
+                <div class="features__grid">
+                    <article class="card">
+                        <h3>Fast Layout</h3>
+                        <p>Grid لتقسيم الصفحة و Flex لترتيب التفاصيل.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Reusable Buttons</h3>
+                        <p>أزرار موحّدة بأساليب مختلفة.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Responsive</h3>
+                        <p>Breakpoints جاهزة Tablet / Desktop.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Clean SCSS</h3>
+                        <p>Variables + Mixins + Components.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Accessible</h3>
+                        <p>Focus styles جاهزة للروابط والأزرار.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Easy Theming</h3>
+                        <p>غيّر الألوان من ملف variables فقط.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="contact">
+            <div class="container cta__box">
+                <div>
+                    <h2>جاهز تبدأ؟</h2>
+                    <p>نموذج CTA بسيط. ركّز على فعل واحد واضح.</p>
+                </div>
+                <a class="btn btn--primary" href="#">Start Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__grid">
+            <div>
+                <div class="logo logo--footer">Brand</div>
+                <p class="muted">قالب تعليمي للتدريب على SCSS structure.</p>
+            </div>
+
+            <div class="footer__links">
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer__copy muted">
+                © <span id="y"></span> Brand. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>

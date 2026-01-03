@@ -8,6 +8,10 @@
   top: 0;
   z-index: 10;
 
+  .img {
+    height: $img-logo-hight;
+  }
+
   /* Mobile: stack */
   @include respond-min(0px) {
     flex-wrap: wrap;
@@ -21,6 +25,7 @@
 .logo {
   font-family: $font-heading;
   letter-spacing: 0.5px;
+  height: $img-logo-hight;
 }
 
 /* Hero */
@@ -63,8 +68,8 @@
 }
 
 .hero__card {
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: $radius;
   padding: $space-3;
 
