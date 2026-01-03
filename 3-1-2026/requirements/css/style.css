@@ -260,7 +260,8 @@ nav a {
 }
 
 body {
-    background: #fff;
+    background: #fafafa;
+    ;
 }
 
 a {
@@ -418,6 +419,11 @@ a {
 /* adjustment for mobile phones */
 
 @media(max-width: 700px) {
+    .imgs {
+        vertical-align: middle;
+        height: 512px;
+    }
+
     .navbar-container .nav-items {
         flex-direction: column;
         position: fixed;
@@ -472,6 +478,19 @@ a {
 
 .navbar-container .nav-items.active {
     right: 0;
+}
+
+.container.marketing {
+    margin-top: 39px;
+}
+
+img.bd-placeholder-img.rounded-circle {
+    border-radius: 33px !important;
+}
+
+.imgs {
+    vertical-align: middle;
+    height: 742px;
 }
 
 /* End of styles */
