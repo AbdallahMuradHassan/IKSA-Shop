@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../requirements/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../requirements/css/style.css">
+    <link rel="stylesheet" href="../requirements/css/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+
+    <navbar class="navbar-container shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="logo-container"><img src="../requirements/imges/logo.jpg" alt="Profile Image" width=""
+                class="profile-image">
+        </div>
+
+        <div class="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <ul class="nav-items">
+            <li class="nav-link"><a href="index.html">Home</a></li>
+            <li class="nav-link"><a href="#">prodect</a></li>
+            <li class="nav-link"><a href="#">Contact</a></li>
+            <li class="nav-link"><a href="#">About</a></li>
+            <div class="login-register">
+                <a href="Login_Register.php" class="button">Login</a>
+
+            </div>
+        </ul>
+    </navbar>
+    <!-- Header Section End Here -->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active imgs">
+                <img src="../requirements/imges/prdects1.jpg" class="bd-placeholder-img" width="100%" height="100%" />
+            </div>
+            <div class="carousel-item imgs">
+                <img src="../requirements/imges/prdects2.jpg" class="bd-placeholder-img" width="100%" height="100%" />
+
+            </div>
+            <div class="carousel-item imgs">
+                <img src="../requirements/imges/prdects3.jpg" class="bd-placeholder-img" width="100%" height="100%" />
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- Hero Section -->
+    <div class="container marketing">
+
+        <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+            <div class="row" id="box">
+                <div class=" cards col-lg-4 col-m-6">
+                    <img src="../requirements/imges/prdects3.jpg" class="bd-placeholder-img rounded-circle" width="140"
+                        height="140" />
+
+                    <h2>Coll of duty</h2>
+                    <p>Some representative placeholder content for the three columns of text below the carousel. This is
+                        the first
+                        column.</p>
+                    <p><a class="btn btn-secondary login-register" href="#">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="cards col-lg-4 col-m-6">
+                    <img src="../requirements/imges/prdects3.jpg" class="bd-placeholder-img rounded-circle" width="140"
+                        height="140" />
+
+                    <h2>Rally_Jordan1</h2>
+                    <p>Some representative placeholder content for the three columns of text below the carousel. This is
+                        the first
+                        column.</p>
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="cards col-lg-4 col-m-6">
+                    <img src="../requirements/imges/prdects3.jpg" class="bd-placeholder-img rounded-circle" width="140"
+                        height="140" />
+
+                    <h2>Rally_Jordan2</h2>
+                    <p>Some representative placeholder content for the three columns of text below the carousel. This is
+                        the first
+                        column.</p>
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div>
+    </div>
+    <button onclick="hide()"> hide / show</button>
+    <!-- /END THE FEATURETTES -->
+    <div class="wrapper">
+
+        <div class="single-card">
+            <div class="img-area">
+                <img src="../requirements/imges/prdects1.jpg" alt="">
+                <div class="overlay">
+                    <button class="view-details" onclick="greetUser()">View Details</button>
+                </div>
+            </div>
+            <div class="info">
+                <h3>r</h3>
+                <h5>ss</h5>
+                <p>
+                    rr
+                </p>
+
+                <p>
+
+                    aa
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Category Tab Slider Area End -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Landing Page</p>
+    </footer>
+
+</body>
+<script>
+    let bar = document.querySelector('.bars'),
+        navItem = document.querySelector('.nav-items');
+
+    bar.addEventListener('click', () => {
+        navItem.classList.toggle('active');
+    })</script>
+<script>
+    // Function definition
+    function greetUser() {
+        alert("Hello, world!");
+    }
+
+    // Function with a parameter and return value
+    function hide() {
+        const box = document.getElementById("box");
+
+        if (box.style.display === "none") {
+            box.style.display = "block";
+        } else {
+            box.style.display = "none";
+        }
+
+    }
+</script>
+<script src="../requirements/js/bootstrap.bundle.min.js"></script>
+
+</html>
