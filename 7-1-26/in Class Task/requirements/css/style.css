@@ -6,7 +6,7 @@
 }
 
 img.profile-image {
-    height: 69px;
+    height: 60px;
 }
 
 
@@ -116,7 +116,6 @@ dev :hover {
     padding-top: 15px;
     margin-bottom: 5px;
     width: 32%;
-    background-image: url("../imges/prdects3.jpg");
 
 }
 
@@ -669,8 +668,6 @@ body {
 
 .single-card:hover {
     transform: translateY(-10px);
-    transform: rotate(0.01turn);
-
 }
 
 .img-area {
@@ -754,31 +751,4 @@ body {
 
     color: #0c2344;
     margin-top: revert-layer;
-}
-
-.img-box:hover {
-    transition: transform 0.3s ease;
-    will-change: transform;
-}
-
-.track {
-    display: flex;
-    width: max-content;
-    animation: scroll 20s linear infinite;
-}
-
-@keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-
-}
-
-html,
-body {
-    overflow-x: hidden;
 }

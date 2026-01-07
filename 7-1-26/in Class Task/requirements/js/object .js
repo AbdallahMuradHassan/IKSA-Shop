@@ -1,0 +1,21 @@
+console.log("ssss");
+let accounts = [
+    { name: "ss", email: "ss@gmail.com", phonenumper: "+962788888888" },
+    { name: "yy", email: "yy@gmail.com", phonenumper: "+962788888888" },
+    { name: "rr", email: "rr@gmail.com", phonenumper: "+962788888888" },
+    { name: "tt", email: "tt@gmail.com", phonenumper: "+962788888888" }
+];
+
+for (const account of accounts) {
+    for (const key in account) {
+        if (Object.hasOwn(account, key)) {
+            console.log(key, account[key]);
+        }
+    }
+}
+
+accounts.forEach(account => {
+    console.log(account.name);
+    console.log(account.email);
+    console.log(account.phonenumper);
+});
