@@ -9,7 +9,6 @@ let accounts = [
 
 
 accounts.forEach(account => {
-    console.log(account.name);
-    console.log(account.email);
-    console.log(account.phonenumper);
+    console.log(`account: name ${account.name}, email ${account.email}, phone ${account.phonenumper}`);
+
 });
