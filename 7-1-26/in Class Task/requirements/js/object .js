@@ -7,7 +7,9 @@ let accounts = [
 ];
 
 
-
+accounts.map(account => {
+    console.log(`account: name ${account.name}, email ${account.email}, phone ${account.phonenumper}`);
+})
 accounts.forEach(account => {
     console.log(`account: name ${account.name}, email ${account.email}, phone ${account.phonenumper}`);
 
