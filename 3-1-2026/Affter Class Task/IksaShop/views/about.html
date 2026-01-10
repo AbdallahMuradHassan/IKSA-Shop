@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../requirements/css/bootstrap-css-floder/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../requirements/css/header.css">
+    <link rel="stylesheet" href="../requirements/css/footer.css">
+    <link rel="stylesheet" href="../requirements/css/style.css">
+    <link rel="stylesheet" href="../requirements/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../requirements/css/slider.css">
+    <link rel="stylesheet" href="../requirements/css/credtcard.css">
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+
+    <div id="header-placeholder">
+
+    </div>
+    <div class="payment-form">
+        <h2>Card Payment</h2>
+
+        <form id="paymentForm" novalidate>
+
+            <label>Cardholder Name</label>
+            <input type="text" id="name">
+            <div class="error" id="nameError">Name is required</div>
+
+            <label>Card Number</label>
+            <input type="text" id="cardNumber" maxlength="16" placeholder="1234567812345678">
+            <div class="error" id="cardError">Invalid card number</div>
+
+            <div class="row">
+                <div style="flex:1">
+                    <label>Expiry (MM/YY)</label>
+                    <input type="text" id="expiry" placeholder="MM/YY">
+                    <div class="error" id="expiryError">Invalid expiry date</div>
+                </div>
+
+                <div style="flex:1">
+                    <label>CVV</label>
+                    <input type="password" id="cvv" maxlength="3">
+                    <div class="error" id="cvvError">Invalid CVV</div>
+                </div>
+            </div>
+
+            <label>Amount</label>
+            <input type="number" id="amount">
+            <div class="error" id="amountError">Enter valid amount</div>
+
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+
+    <!-- Category Tab Slider Area End -->
+
+    <!-- Footer -->
+
+    <div id="footer-placeholder"></div>
+</body>
+<script src="../requirements/js/datalist.js"></script>
+<script src="../requirements/js/cridetcardvaledation.js"></script>
+
+<!-- JavaScript to load the header -->
+<script>
+    fetch('includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Header file not found');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+
+            // ✅ HEADER JS MUST BE HERE
+            const bar = document.querySelector('.bars');
+            const navItem = document.querySelector('.nav-items');
+
+            if (bar && navItem) {
+                bar.addEventListener('click', () => {
+                    navItem.classList.toggle('active');
+                });
+            }
+        })
+        .catch(error => console.error('Error loading header:', error));
+</script>
+<script>
+    fetch('includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Footer file not found');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer:', error));
+</script>
+<script src="../requirements/js/hero-section-slider.js"></script>
+<!-- JavaScript to load the foter -->
+
+<script>
+    let bar = document.querySelector('.bars'),
+        navItem = document.querySelector('.nav-items');
+
+    bar.addEventListener('click', () => {
+        navItem.classList.toggle('active');
+    })
+
+    // Function definition
+    function greetUser() {
+        alert("Hello, world!");
+    }
+
+    // Function with a parameter and return value
+    function hide() {
+        const box = document.getElementById("box");
+        const button = document.querySelector('button');
+        button.innerText = "show";
+        if (box.style.display === "none") {
+            box.style.display = "block";
+            button.style.backgroundColor = '#666';
+
+        } else {
+            box.style.display = "none";
+        }
+
+    }
+</script>
+<script src="../requirements/js/bootstrap.bundle.min.js"></script>
+
+</html>

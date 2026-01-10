@@ -11,7 +11,7 @@ let prodect = [
 const html = prodect.filter(price => price.price < 10).map(filter => {
     return `
         <div class="cards col-lg-4 col-md-6">
-            <img src="../requirements/imges/prdects${++x}.jpg"
+            <img src="../requirements/imges/prdects${++x}.jpeg"
                  class="bd-placeholder-img rounded-circle"
                  width="140" height="140" />
 
@@ -25,7 +25,7 @@ const html = prodect.filter(price => price.price < 10).map(filter => {
                 </a>
             </p>
         </div>
-    `; x++;
+    `;
 }).join("");
 document.getElementById("box").innerHTML = html;
 //accounts.forEach(account => {
