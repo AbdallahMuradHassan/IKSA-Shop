@@ -17,7 +17,7 @@ function LikeButton() {
 
             {/* Correct: pass a function reference */}
             <button onClick={addLike}>Like</button>
-            <button onClick={reset}>reset</button>
+            <button onClick={reset} className="secondary">reset</button>
 
             <p className="muted">
                 Event names in React are camelCase (onClick, onChange).
