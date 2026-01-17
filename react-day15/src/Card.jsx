@@ -9,7 +9,7 @@ function Card({ products }) {
                     <div className="single-card" key={x}>
                         <div className="img-area">
                             <img
-                                src={`/assets/imges/prodects/${product.name}s/${product.name}1.jpeg`}
+                                src={`/imges/prodects/${product.name}s/${product.name}1.jpeg`}
                                 alt={product.name}
                             />
 
