@@ -1,31 +1,43 @@
+function Card({ products }) {
+    let x = 0;
 
-function Card() {
     return (
+        <>
+            <div className="wrapper">
+                {products.map((product) => (
 
-        <navbar className="navbar-container shadow-lg p-3 mb-5 bg-white rounded">
-            <div className="logo-container">
+                    <div className="single-card" key={x}>
+                        <div className="img-area">
+                            <img
+                                src={`/assets/imges/prodects/${product.name}s/${product.name}1.jpeg`}
+                                alt={product.name}
+                            />
 
+                            <div className="overlay">
+                                <button
+                                    className="view-details"
+                                    onClick={() => window.location.href = "#"}
+                                >
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="info">
+                            <h3>{product.name}</h3>
+                            <h5>Category Name: {product.name}</h5>
+                            <p>{product.dicrption}</p>
+                            <br />
+                            <p className="price">
+                                Price: {product.price} JOD
+                            </p>
+                        </div>
+                    </div>
+
+                ))}
             </div>
-
-            <div className="bars">
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
-            </div>
-
-            <ul className="nav-items">
-                <li className="nav-link"><a href="index.html">Home</a></li>
-                <li className="nav-link"><a href="prodect.html">prodect</a></li>
-                <li className="nav-link"><a href="contact.html">Contact</a></li>
-                <li className="nav-link"><a href="about.html">About</a></li>
-                <div className="login-register">
-                    <a href="Login_Register.php" className="button">Login</a>
-
-                </div>
-            </ul>
-        </navbar>
-
+        </>
     );
-
 }
+
 export default Card;

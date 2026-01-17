@@ -165,7 +165,7 @@ h2 {
 
 /* adjustment for mobile phones */
 
-@media(max-width: 800px) {
+@media(max-width: 890px) {
     .imgs {
         vertical-align: middle;
         height: 512px;

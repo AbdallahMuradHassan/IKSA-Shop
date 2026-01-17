@@ -1,33 +1,35 @@
-import logo from './imges/LOGO2.png'
+import { useState } from "react";
+import logo from "./assets/imges/LOGO2.png";
 
 function Header() {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
+        <nav className="navbar-container shadow-lg p-3 mb-5 bg-white rounded">
 
-        <navbar className="navbar-container shadow-lg p-3 mb-5 bg-white rounded">
             <div className="logo-container">
-                <img src={logo} className="profile-image" alt="" />
-
+                <img src={logo} className="profile-image" alt="Logo" />
             </div>
 
-            <div className="bars">
+            <div className="bars" onClick={() => setIsOpen(!isOpen)}>
                 <div className="bar"></div>
                 <div className="bar"></div>
                 <div className="bar"></div>
             </div>
 
-            <ul className="nav-items">
-                <li className="nav-link"><a href="index.html">Home</a></li>
-                <li className="nav-link"><a href="prodect.html">prodect</a></li>
-                <li className="nav-link"><a href="contact.html">Contact</a></li>
-                <li className="nav-link"><a href="about.html">About</a></li>
+            <ul className={`nav-items ${isOpen ? "active" : ""}`}>
+                <li className="nav-link"><a href="#">Home</a></li>
+                <li className="nav-link"><a href="#">Product</a></li>
+                <li className="nav-link"><a href="#">Contact</a></li>
+                <li className="nav-link"><a href="#">About</a></li>
+
                 <div className="login-register">
-                    <a href="Login_Register.php" className="button">Login</a>
-
+                    <a href="#" className="button">Login</a>
                 </div>
             </ul>
-        </navbar>
 
+        </nav>
     );
-
 }
+
 export default Header;

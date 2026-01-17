@@ -1,4 +1,4 @@
-import reactLogo from './imges/LOGO1.jpg'
+import reactLogo from './assets/imges/LOGO1.jpg'
 
 function Footers() {
     return (
