@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../requirements/css/bootstrap-css-floder/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../requirements/css/header.css">
+    <link rel="stylesheet" href="../requirements/css/footer.css">
+    <link rel="stylesheet" href="../requirements/css/style.css">
+    <link rel="stylesheet" href="../requirements/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../requirements/css/slider.css">
+    <link rel="stylesheet" href="../requirements/css/credtcard.css">
+    <link rel="stylesheet" href="../requirements/css/cat.css">
+
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+
+    <div id="header-placeholder">
+
+    </div>
+
+    <section>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style=" background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+             url(../requirements/imges/slider/slider1.jpeg) no-repeat 50% 50% / cover;
+             ">
+                    <a class="active" href="Category_Events.php?Category_ID=<?php echo $Category_ID; ?>">
+                        <span>domestic</span>
+                        <div>
+                            <h2>bages</h2>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style=" background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+             url(../requirements/imges/slider/slider1.jpeg) no-repeat 50% 50% / cover;
+             ">
+                    <a class="active" href="Category_Events.php?Category_ID=<?php echo $Category_ID; ?>">
+                        <span>domestic</span>
+                        <div>
+                            <h2>bages</h2>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style=" background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+             url(../requirements/imges/slider/slider2.jpeg) no-repeat 50% 50% / cover;
+             ">
+                    <a class="active" href="Category_Events.php?Category_ID=<?php echo $Category_ID; ?>">
+                        <span>domestic</span>
+                        <div>
+                            <h2>bages</h2>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style=" background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+             url(../requirements/imges/slider/slider3.jpeg) no-repeat 50% 50% / cover;
+             ">
+                    <a class="active" href="Category_Events.php?Category_ID=<?php echo $Category_ID; ?>">
+                        <span>domestic</span>
+                        <div>
+                            <h2>bages</h2>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <div id="footer-placeholder"></div>
+</body>
+<script src="../requirements/js/datalist.js"></script>
+<script src="../requirements/js/cridetcardvaledation.js"></script>
+
+<!-- JavaScript to load the header -->
+<script>
+    fetch('includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Header file not found');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+
+            // ✅ HEADER JS MUST BE HERE
+            const bar = document.querySelector('.bars');
+            const navItem = document.querySelector('.nav-items');
+
+            if (bar && navItem) {
+                bar.addEventListener('click', () => {
+                    navItem.classList.toggle('active');
+                });
+            }
+        })
+        .catch(error => console.error('Error loading header:', error));
+</script>
+<script>
+    fetch('includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Footer file not found');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer:', error));
+</script>
+<script src="../requirements/js/hero-section-slider.js"></script>
+<!-- JavaScript to load the foter -->
+
+<script>
+    let bar = document.querySelector('.bars'),
+        navItem = document.querySelector('.nav-items');
+
+    bar.addEventListener('click', () => {
+        navItem.classList.toggle('active');
+    })
+
+    // Function definition
+    function greetUser() {
+        alert("Hello, world!");
+    }
+
+    // Function with a parameter and return value
+    function hide() {
+        const box = document.getElementById("box");
+        const button = document.querySelector('button');
+        button.innerText = "show";
+        if (box.style.display === "none") {
+            box.style.display = "block";
+            button.style.backgroundColor = '#666';
+
+        } else {
+            box.style.display = "none";
+        }
+
+    }
+</script>
+<script src="../requirements/js/bootstrap.bundle.min.js"></script>
+<script src="../requirements/js/catigory.js"></script>
+
+
+</html>
