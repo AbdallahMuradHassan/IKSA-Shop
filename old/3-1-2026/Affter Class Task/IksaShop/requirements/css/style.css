@@ -574,18 +574,7 @@ body {
     }
 }
 
-.single-cards {
-    position: relative;
-    width: 352px;
-    height: 344px;
-    margin: 15px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.3s ease;
-    overflow: hidden;
-    background: #fff;
-    border-radius: 30% 0;
-    transition: all 0.8s ease-in-out;
-}
+
 
 .slider-section {
     padding-bottom: 0%;

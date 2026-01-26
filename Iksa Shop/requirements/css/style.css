@@ -617,18 +617,8 @@ body {
 .track {
     display: flex;
     width: max-content;
-    /* shrink-wrap to content width */
-    gap: 20px;
-    /* optional spacing between cards */
-    will-change: transform;
+    animation: scroll 50s linear infinite;
 
-    /* Run both animations together:
-     1) move left forever (loop)
-     2) rotate 360 degrees forever
-  */
-    animation:
-        marquee 25s linear infinite,
-        spinY 10s linear infinite;
 }
 
 /* Each card should not shrink, otherwise widths can collapse */
@@ -640,24 +630,13 @@ body {
    Because you duplicated all items once, moving -50% slides exactly
    one "set" out of view and reveals the duplicate set. [web:18]
 */
-@keyframes marquee {
+@keyframes scroll {
     from {
         transform: translateX(0);
     }
 
     to {
         transform: translateX(-50%);
-    }
-}
-
-/* 360° rotation */
-@keyframes spinY {
-    from {
-        rotate: y 0deg;
-    }
-
-    to {
-        rotate: y 360deg;
     }
 }
 
