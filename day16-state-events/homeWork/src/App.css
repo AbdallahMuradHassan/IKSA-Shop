@@ -1,0 +1,102 @@
+/* Simple styling for Day 16 examples */
+
+.page {
+    max-width: 980px;
+    margin: 30px auto;
+    padding: 0 16px;
+    font-family: Arial, sans-serif;
+}
+
+.topbar {
+    margin-bottom: 24px;
+}
+
+.section {
+    margin: 24px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.form {
+    display: grid;
+    gap: 12px;
+}
+
+.label {
+    display: grid;
+    gap: 6px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+}
+
+button {
+    padding: 10px 14px;
+    color: #212121;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.secondary {
+    background: #f9fafb;
+}
+
+.danger {
+    border-color: #ef4444;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.big {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.muted {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.footer {
+    margin-top: 24px;
+}

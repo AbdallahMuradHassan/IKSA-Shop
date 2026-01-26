@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
+import LoadingPage from "../pages/LoadingPage";
+import NotFound from "../pages/NotFound";
 
 function ProductList({ firstIndex = 0, lastIndex = 12 }) {
   const [products, setProducts] = useState([]);
@@ -21,13 +23,13 @@ function ProductList({ firstIndex = 0, lastIndex = 12 }) {
     }
 
     fetchData();
-  }, []);
+  }, [1000]);
 
   const slicedProducts = products.slice(firstIndex, lastIndex);
   const pagesCount = Math.ceil(products.length / 12);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <LoadingPage />;
+  if (error) return <NotFound />;
 
   return (
     <div className="wrapper">
