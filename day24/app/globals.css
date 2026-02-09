@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+.box {
+  display: grid;
+  gap: 12px;
+  margin: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contat {
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.contat:hover {
+  box-shadow: 10px 10px 5px grey;
+}

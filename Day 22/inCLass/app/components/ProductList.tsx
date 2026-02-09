@@ -12,6 +12,7 @@ interface Product {
 
 function ProductList({ firstIndex = 0, lastIndex = 12 }) {
   const [products, setProducts] = useState<Product[]>([]);
+
   useEffect(() => {
     const loadProducts = async () => {
       try {
@@ -25,7 +26,6 @@ function ProductList({ firstIndex = 0, lastIndex = 12 }) {
 
     loadProducts();
   }, []);
-
   return (
     <div className="wrapper">
       {products.slice(firstIndex, lastIndex).map(product => (

@@ -1,3 +1,4 @@
+"use client";
 function Category() {
     const cards = [
         "/imges/slider/slider1.jpeg",
@@ -26,7 +27,7 @@ function Category() {
                 {duplicatedCards.map((img, index) => (
                     <div key={index}>
                         <div className="single-card single-cards" >
-                            <img className="img-Cards" src={`/images/slider/slider${index}.jpg`} alt="category" />
+                            <img className="img-Cards" src={img} alt="category" />
                             <div className="overlay" >
                                 <button
                                     className="view-details"
