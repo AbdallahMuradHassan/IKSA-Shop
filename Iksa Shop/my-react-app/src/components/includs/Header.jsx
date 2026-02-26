@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { href, Link } from "react-router-dom";
 import { ImFacebook, ImInstagram } from "react-icons/im";
 import { AiFillHome } from "react-icons/ai";
 import { AiFillProduct } from "react-icons/ai";
@@ -10,6 +10,14 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import logo from "../../assets/imges/LOGO2.png";
 
+
+const PageLinks = [
+    { pageName: "Home", To: "/" },
+    { pageName: "Product", To: "/product" },
+    { pageName: "about", To: "/about" },
+    { pageName: "Contact", To: "/contact" },
+
+]
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const scrollToUp = () => {
@@ -33,15 +41,23 @@ function Header() {
             </div>
 
             <ul className={`nav-items ${isOpen ? "active" : ""}`}>
-                <li className="nav-link" ><Link to="/" onClick={() => { OpenCloseMenu(); scrollToUp() }}>Home</Link></li>
-                <li className="nav-link"><Link to="/product" onClick={() => { OpenCloseMenu(); scrollToUp() }}>Product</Link></li>
-                <li className="nav-link"><Link to="/contact" onClick={() => { OpenCloseMenu(); scrollToUp() }}>Contact</Link></li>
-                <li className="nav-link"><Link to="/about" onClick={() => { OpenCloseMenu(); scrollToUp() }}>About</Link></li>
-
+                {PageLinks.map((link, index) => (
+                    <li className="nav-link" key={index}>
+                        <Link
+                            to={link.To}
+                            onClick={() => {
+                                OpenCloseMenu();
+                                scrollToUp();
+                            }}
+                        >
+                            {link.pageName}
+                        </Link>
+                    </li>
+                ))}
                 <div className="login-register">
-                    <a href="#" className="button">Login</a>
+                    <Link to="/loginregistration" className="button">Login</Link>
                 </div>
-                <div class="social_follow" >
+                <div className="social_follow" >
                     <ul className="ulSosal" >
                         <li title="facebook" className="liSosal"><a href="#" target="_blank"><ImFacebook className="Icon facebook" /><span className="facebook spanSoshal">Facebook</span></a>
                         </li>

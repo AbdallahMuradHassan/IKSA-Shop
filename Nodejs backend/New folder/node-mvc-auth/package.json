@@ -1,0 +1,16 @@
+{
+  "name": "mvc-auth",
+  "version": "1.0.0",
+  "description": "MVC authentication with JWT in Node.js",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3"
+  }
+}

@@ -1,3 +1,9 @@
+/* Tailwind v4 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 /* ==========================================================
    1) RESET / BASE
    ========================================================== */
@@ -674,6 +680,24 @@ body {
     font-size: 3.2rem;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
+}
+
+.contenerIncart {
+    width: 100%;
+}
+
+@media (max-width:1300px) and (min-width:990px) {
+    .col-md-8cart {
+        flex: 0 0 auto;
+        width: 92.333333%;
+    }
+}
+
+.error {
+    font-size: smaller;
+    display: block;
+    color: red;
+    font-family: cursive;
 }
 
 /* ==========================================================

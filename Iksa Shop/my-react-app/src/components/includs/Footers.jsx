@@ -41,13 +41,13 @@ function Footers() {
                                             </p>
                                         </div>
 
-                                        <div class="social_follow">
+                                        <div className="social_follow">
                                             <ul>
-                                                <li class="Icon" title="facebook"><a href="#" target="_blank"><ImFacebook className="Icon facebook" /><span className="facebook">Facebook</span></a>
+                                                <li className="Icon" title="facebook"><a href="#" target="_blank"><ImFacebook className="Icon facebook" /><span className="facebook">Facebook</span></a>
                                                 </li>
-                                                <li class="Icon" title="whatsapp"><a href="https://api.whatsapp.com/send/?phone=%2B962781021110&text&type=phone_number&app_absent=0" target="_blank"><AiOutlineWhatsApp className="Icon whatsapp" /><span className="whatsapp">whatsapp</span></a>
+                                                <li className="Icon" title="whatsapp"><a href="https://api.whatsapp.com/send/?phone=%2B962781021110&text&type=phone_number&app_absent=0" target="_blank"><AiOutlineWhatsApp className="Icon whatsapp" /><span className="whatsapp">whatsapp</span></a>
                                                 </li>
-                                                <li class="Icon" title="instagram"><a href="https://www.instagram.com/iksaShop/" target="_blank"><AiOutlineInstagram className="Icon instagram-gradient" /><span className="instagram-gradient">instagram</span></a>
+                                                <li className="Icon" title="instagram"><a href="https://www.instagram.com/iksaShop/" target="_blank"><AiOutlineInstagram className="Icon instagram-gradient" /><span className="instagram-gradient">instagram</span></a>
                                                 </li>
                                             </ul>
                                         </div>

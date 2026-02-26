@@ -3,7 +3,7 @@
 
 import { useCart } from "../CartContext";
 
-export default function AddToCartButton({ product }) {
+function AddToCartButton({ product }) {
     const { addItem } = useCart();
 
     return (
@@ -12,3 +12,4 @@ export default function AddToCartButton({ product }) {
         </button>
     );
 }
+export default AddToCartButton
