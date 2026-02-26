@@ -1,13 +1,8 @@
-import { addProducts, getProducts } from "@/lib/productsStore"
-export async function GET() {
+import { NextResponse } from "next/server";
+import { addProduct, getProducts } from "@/lib/productsStore";
 
-    return Response.json(getProducts);
+// GET all products
+export async function GET() {
+  return NextResponse.json(getProducts());
 }
-export async function POST(request) {
-    let body;
-    try {
-        body = await request.json()
-    } catch (e) {
-        return Response.json({ error: "invalid JSON" }, { status: 400 });
-    }
-}
+
