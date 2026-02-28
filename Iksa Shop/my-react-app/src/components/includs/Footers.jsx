@@ -32,7 +32,7 @@ function Footers() {
                                         <h4 className="footer-herading">IksaShop</h4>
 
                                         <div className="need_help">
-                                            <p > <MdLocationOn className="imgForIon" /> Amman / Jordan</p>
+                                            <a href="https://maps.app.goo.gl/wVi29vNLfCSrJWAj7">   <p > <MdLocationOn className="imgForIon" /> Amman / Jordan</p></a>
                                             <p >
                                                 <a href="tel:+962781021110"><AiFillPhone className="imgForIon" /> Telephone: +962781021110</a>
                                             </p>
@@ -69,7 +69,7 @@ function Footers() {
                                         <h4 className="footer-herading">More Links</h4>
                                         <ul className="footer-links">
                                             <li><Link to="/about" onClick={() => { scrollToUp() }}>About</Link></li>
-                                            <li><Link to="/contact" onClick={() => { scrollToUp() }}>Contact</Link></li>
+                                            <li><Link to="https://api.whatsapp.com/send/?phone=%2B962781021110&text&type=phone_number&app_absent=0" onClick={() => { scrollToUp() }}>Contact</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -88,10 +88,10 @@ function Footers() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* Footer Bottom */}
-            <div className="footer-bottom">
+            < div className="footer-bottom" >
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
@@ -107,7 +107,7 @@ function Footers() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 }

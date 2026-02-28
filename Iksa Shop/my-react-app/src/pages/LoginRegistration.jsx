@@ -355,13 +355,14 @@ import React, { useState } from "react";
 import "../assets/css/login.css";
 import RegistrationForm from "../components/RegistrationForm";
 import Login from "../components/LoginForm";
-
+import BackButton from "../components/BackButton";
 
 const LoginRegistration = () => {
     const [showRegister, setShowRegister] = useState(false);
 
     return (
         <div className="ms-form-container">
+            <BackButton />
             {!showRegister ? (
                 <Login onCreateAccount={() => setShowRegister(true)} />
             ) : (

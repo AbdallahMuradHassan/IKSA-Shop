@@ -66,8 +66,8 @@ function Login({ onCreateAccount }) {
                     <button type="submit" className="submit action-button">
                         Login
                     </button>
-                    <BackButton />
-                    <button type="submit" className="submit action-button">
+                    <br />
+                    <button type="" className="action-button cont">
                         contewith
                     </button>
                     <p className="form-footer">

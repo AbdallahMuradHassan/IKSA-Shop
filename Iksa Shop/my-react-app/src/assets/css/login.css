@@ -9,7 +9,9 @@
     margin-top: -2rem !important;
     font-family: 'Montserrat', arial, verdana;
 
-    background: linear-gradient(rgba(196, 102, 0, 1.6), rgba(155, 89, 182, 4.6));
+    /*background: linear-gradient(rgba(196, 102, 0, 1.6), rgba(155, 89, 182, 4.6));
+*/
+    background: linear-gradient(rgb(153 146 165), rgb(49 38 85));
 
     width: 100%;
 }
@@ -181,3 +183,16 @@
     color: white;
     transition: all 0.5s ease;
 }
+
+.previous {
+    background-color: #ffffff00 !important;
+    color: #fffafa !important;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding: 11px;
+    border-color: #ffffff00;
+
+}
+
+.cont {}

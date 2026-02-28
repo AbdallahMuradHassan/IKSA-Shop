@@ -26,7 +26,7 @@ function Category() {
                 {duplicatedCards.map((img, index) => (
                     <div key={index}>
                         <div className="single-card single-cards" >
-                            <img className="img-Cards" src={`/images/slider/slider${index}.jpg`} alt="category" />
+                            <img className="img-Cards" src={`/imges/slider/slider${index}.jpeg`} alt="category" />
                             <div className="overlay" >
                                 <button
                                     className="view-details"

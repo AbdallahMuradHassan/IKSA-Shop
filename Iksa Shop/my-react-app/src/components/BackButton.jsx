@@ -5,7 +5,7 @@ function BackButton() {
     return (
         <button
             type="button"
-            className="previous action-button"
+            className="action-button previous"
             onClick={() => navigate(-1)}
         >
             ← Back

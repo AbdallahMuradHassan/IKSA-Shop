@@ -15,7 +15,7 @@ const PageLinks = [
     { pageName: "Home", To: "/" },
     { pageName: "Product", To: "/product" },
     { pageName: "about", To: "/about" },
-    { pageName: "Contact", To: "/contact" },
+    { pageName: "Contact", To: "https://api.whatsapp.com/send/?phone=%2B962781021110&text&type=phone_number&app_absent=0" },
 
 ]
 function Header() {

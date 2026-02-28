@@ -87,16 +87,23 @@
 // }
 
 // export default ProductList;
-import React, { useEffect, useState, } from "react";
+import React, { useEffect, useState } from "react";
 import LoadingPage from "../pages/LoadingPage";
 import NotFound from "../pages/NotFound";
 import Card from "../components/Card";
 
-function ProductList({ firstIndex = 0, lastIndex = 12 }) {
+function ProductList({ productsPerPage = 12 }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
+  const scrollToUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  };
   useEffect(() => {
     async function fetchData() {
       try {
@@ -111,22 +118,59 @@ function ProductList({ firstIndex = 0, lastIndex = 12 }) {
       }
     }
     fetchData();
-  }, []); // Fixed the dependency array from [1000] to []
-
-  const slicedProducts = products.slice(firstIndex, lastIndex);
+  }, []);
 
   if (loading) return <LoadingPage />;
   if (error) return <NotFound />;
 
-  return (
+  const totalPages = Math.ceil(products.length / productsPerPage);
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const slicedProducts = products.slice(startIndex, endIndex);
+  return (<>
     <div className="wrapper">
       {slicedProducts.map((product, index) => (
+
         <Card
           product={product}
           key={product.id}
-          index={index} // Pass index here
+          index={index}
         />
+
       ))}
+
     </div>
+    <ul className="pagination">
+      <li>
+        <button
+          disabled={currentPage === 1}
+          className={`${currentPage === 1 ? "active" : ""}`}
+          onClick={() => { setCurrentPage(prev => Math.max(prev - 1, 1)), scrollToUp() }}
+        >
+          &laquo;
+        </button>
+      </li>
+
+      {[...Array(totalPages)].map((_, i) => (
+        <li key={i + 1}>
+          <button
+            className={currentPage === i + 1 ? "active" : ""}
+            onClick={() => { setCurrentPage(i + 1), scrollToUp() }}
+          >
+            {i + 1}
+          </button>
+        </li>
+      ))}
+
+      <li>
+        <button
+          disabled={currentPage === totalPages}
+          className={`${currentPage === totalPages ? "active" : ""}`}
+          onClick={() => { setCurrentPage(prev => Math.min(prev + 1, totalPages)), scrollToUp() }}
+        >
+          &raquo;
+        </button>
+      </li>
+    </ul></>
   );
 } export default ProductList;

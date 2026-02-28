@@ -106,13 +106,15 @@
 //  export default HeroSection;
 //
 import React, { useState, useEffect } from "react";
-
+import "../assets/css/animate.css"
 
 function HeroSection() {
     const sliders = [
-        { title: "MAGIC SLIDER", url: "/imges/slider/slider1.jpeg", price: "$800" },
-        { title: "MAGIC SLIDER", url: "/imges/slider/slider2.jpeg", price: "$900" },
-        { title: "MAGIC SLIDER", url: "/imges/slider/slider3.jpeg", price: "$1000" }
+        { title: "handmade wooden benches", url: "/imges/slider/slider1.jpeg", dis: " To fit in your space at your convinoiuce you can select desgin, size and color", but: "contact us" },
+        { title: "Swings", url: "/imges/slider/slider2.jpeg", dis: "A very wide section to sellect from to match your style.", but: "order now" },
+        { title: "Trap chairs", url: "/imges/slider/slider3.jpeg", dis: "Our signiture piece made to let you relax, but be cuatious don’t try or youll fall into our tap and buy it.", but: "order now" },
+        { title: "Arabian Stool", url: "/imges/slider/slider4.jpeg", dis: "This traditional desgin made to last, using a verywide selection of woods and the highest quality Halva top.", but: "order now" }
+
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -130,26 +132,25 @@ function HeroSection() {
             {sliders.map((item, i) => (
                 <div
                     key={i}
-                    className={`slide ${activeIndex === i ? "active" : ""}`}
-                    style={{ backgroundImage: `url(${item.url})`, height: "100vh" }}
+                    className={`slide ${activeIndex === i ? "active animated-fast fadeInLeft " : ""}`}
+                    style={{ backgroundImage: `url(${item.url})` }}
                 >
                     <div className="overlay-gradient"></div>
                     <div className="containers">
                         <div className="col-md-6 col-md-offset-3 col-md-pull-3 slider-text">
                             <div className="slider-text-inner">
-                                <div className={`desc ${activeIndex === i ? "fadeInUp" : ""}`}>
+                                <div className={`desc ${activeIndex === i ? "animated fadeInUp" : ""}`}>
                                     <span className="price">{item.price}</span>
                                     <h2>{item.title}</h2>
                                     <p>
-                                        Far far away, behind the word mountains, far from the countries
-                                        Vokalia and Consonantia...
+                                        {item.dis}
                                     </p>
                                     <p>
                                         <a
                                             href="single.html"
                                             className="btn btn-primary btn-outline btn-lg"
                                         >
-                                            Purchase Now
+                                            {item.but}
                                         </a>
                                     </p>
                                 </div>
