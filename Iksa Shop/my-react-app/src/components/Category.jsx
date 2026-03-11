@@ -4,7 +4,6 @@ function Category() {
         "/imges/slider/slider2.jpeg",
         "/imges/slider/slider3.jpeg",
         "/imges/slider/slider4.jpeg",
-
     ];
 
     // Duplicate for infinite scroll effect
@@ -26,7 +25,7 @@ function Category() {
                 {duplicatedCards.map((img, index) => (
                     <div key={index}>
                         <div className="single-card single-cards" >
-                            <img className="img-Cards" src={`/imges/slider/slider${index}.jpeg`} alt="category" />
+                            <img className="img-Cards" src={`/imges/slider/slider1.jpeg`} alt="category" />
                             <div className="overlay" >
                                 <button
                                     className="view-details"

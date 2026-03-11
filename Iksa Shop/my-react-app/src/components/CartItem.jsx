@@ -1,7 +1,7 @@
-import { useCart } from "../context/CartContext";
+import { useCart } from "./cart/CartContext";
 
 export default function CartItem({ item }) {
-  const { dispatch } = useCart();
+  const { updateQuantity } = useCart();
 
   return (
     <div className="rounded-3xl border border-neutral-300 xl:w-11/12">
@@ -18,19 +18,19 @@ export default function CartItem({ item }) {
             <i
               className="bx bx-trash cursor-pointer text-2xl text-red-600"
               onClick={() =>
-                dispatch({ type: "REMOVE_FROM_CART", payload: item.id })
+                removeItem({ productId: item.id })
               }
             ></i>
           </div>
 
           <div className="flex gap-3 text-sm">
             <span className="font-semibold">Size:</span>
-            <span className="text-gray-600">{item.size}</span>
+            <span className="text-gray-600">{item.name}</span>
           </div>
 
           <div className="flex gap-3 text-sm">
             <span className="font-semibold">Color:</span>
-            <span className="text-gray-600">{item.color}</span>
+            <span className="text-gray-600">{item.description}</span>
           </div>
 
           <div className="mt-3 flex items-center justify-between">
@@ -39,14 +39,14 @@ export default function CartItem({ item }) {
               <i
                 className="bx bx-minus cursor-pointer text-xl"
                 onClick={() =>
-                  dispatch({ type: "DECREMENT", payload: item.id })
+                  removeItem({ productId: item.id, qty: item.quantity + 1 })
                 }
-              ></i>
+              > wedqweqwef</i>
               <span className="text-xl">{item.quantity}</span>
               <i
                 className="bx bx-plus cursor-pointer text-xl"
                 onClick={() =>
-                  dispatch({ type: "INCREMENT", payload: item.id })
+                  updateQuantity({ productId: item.id, qty: item.quantity + 1 })
                 }
               ></i>
             </div>

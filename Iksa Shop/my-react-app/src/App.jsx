@@ -24,29 +24,26 @@ import Product from "./pages/Product.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Contact from "./pages/Contact.jsx";
 import LoginRegistration from "./pages/LoginRegistration.jsx"
-
+import AdminLogin from "./admin/pages/AdminLogin.jsx"
 import Carts from "./pages/Carts"
 
 
 function App() {
   const location = useLocation();
 
-  const hideFooterRoutes = ["/contact", "/loginregistration"];
-  const hideHeaderRoutes = ["/contact", "/loginregistration"];
+  const hideFooterRoutes = ["/contact", "/loginregistration", "/admin/adminlogin"];
+  const hideHeaderRoutes = ["/contact", "/loginregistration", "/admin/adminlogin"];
   return (
     <>
+
       {!hideHeaderRoutes.includes(location.pathname) && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/product" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
-
-
+        <Route path="/admin/adminlogin" element={<AdminLogin />} />
         <Route path="/carts" element={<Carts />} />
-
-
-
         <Route path="/loginregistration" element={<LoginRegistration />} />
         {/* This route matches any unknown URL */}
         <Route path="*" element={<NotFound />} />

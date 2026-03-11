@@ -1,15 +1,10 @@
-import { useCart } from "../context/CartContext";
+import { useCart } from "./cart/CartContext";
 
 export default function CartSummary() {
-  const { state } = useCart();
-  const { cartItems } = state;
+  const { items } = useCart(); // items is an array
 
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-
-  const subtotal = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  const totalItems = items.reduce((sum, item) => sum + item.qty, 0);
+  const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   const discount = subtotal * 0.2;
   const deliveryFee = 15;
@@ -26,8 +21,8 @@ export default function CartSummary() {
         </div>
 
         <div className="flex justify-between">
-          <p className="text-gray-600">Total Item</p>
-          <p className="font-semibold">${totalItems}</p>
+          <p className="text-gray-600">Total Items</p>
+          <p className="font-semibold">{totalItems}</p>
         </div>
 
         <div className="flex justify-between">

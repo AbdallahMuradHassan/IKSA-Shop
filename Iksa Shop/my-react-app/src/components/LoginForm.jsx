@@ -27,17 +27,32 @@ function Login({ onCreateAccount }) {
         setErrors(err);
         return Object.keys(err).length === 0;
     };
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (validate()) {
-            console.log("LOGIN DATA:", formData);
+        if (!validate()) return;
+
+        try {
+            const res = await fetch("http://localhost:5000/api/v1/auth/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+                credentials: "include", // important to receive cookies (refresh token)
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) throw new Error(data.message || "Login failed");
+
+            console.log("LOGIN SUCCESS:", data);
             alert("Login successful ✅");
-            // 👉 call API here
+
+            // Save access token (optional if using auth context)
+            localStorage.setItem("accessToken", data.accessToken);
+
+        } catch (err) {
+            alert(err.message);
         }
     };
-
-
     return (
         <div className="ms-form-container">
             <form id="msform" onSubmit={handleSubmit}>

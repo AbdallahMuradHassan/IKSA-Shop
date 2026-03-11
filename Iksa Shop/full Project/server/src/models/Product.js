@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+// src/models/Product.js
+import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -7,7 +8,8 @@ const productSchema = new mongoose.Schema({
     category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
     supplier: { type: mongoose.Schema.Types.ObjectId, ref: "Supplier" },
     images: [String],
-    isActive: { type: Boolean, default: true }
+    isActive: { type: Boolean, default: true },
+    inStock: { type: Boolean, default: false }
 }, { timestamps: true });
 
-module.exports = mongoose.model("Product", productSchema);
+export default mongoose.model("Product", productSchema);

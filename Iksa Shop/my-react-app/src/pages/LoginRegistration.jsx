@@ -359,7 +359,28 @@ import BackButton from "../components/BackButton";
 
 const LoginRegistration = () => {
     const [showRegister, setShowRegister] = useState(false);
+    async function submitForm(e) {
+        e.preventDefault();
+        if (!validate()) return;
 
+        try {
+            const res = await fetch("http://localhost:5000/api/v1/auth/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            if (!res.ok) {
+                const data = await res.json();
+                throw new Error(data.message || "Registration failed");
+            }
+
+            alert("Registration Successful ✅");
+            onBackToLogin(); // navigate back to login
+        } catch (err) {
+            alert(err.message);
+        }
+    }
     return (
         <div className="ms-form-container">
             <BackButton />

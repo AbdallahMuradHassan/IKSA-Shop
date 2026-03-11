@@ -1,41 +1,16 @@
-// function Card({ product }) {
 
-//     return (<>
-
-//         <div className="single-card" >
-//             <div className="img-area">
-//                 <img
-//                     src={product.images}
-//                     alt={product.name}
-//                 />
-//                 <div className="overlay">
-//                     <button
-//                         className="view-details"
-//                         onClick={() => window.location.href = "#"}
-//                     >
-//                         View Details
-//                     </button>
-//                 </div>
-//             </div>
-
-//             <div className="info">
-//                 <h3>{product.title}</h3>
-//                 <h5>Category Name: {product.category}</h5>
-//                 <p>{product.description}</p>
-//                 <p className="price">Price: {product.price} JOD</p>
-//             </div>
-//         </div>
-//     </>);
-// }
 import React, { useEffect, useState, useRef } from "react";
-import { useCart } from "../context/CartContext";
+import { useCart } from "./cart/CartContext";
 import { useNavigate } from "react-router-dom";
+import { productRoutes } from "../admin/api/prductroute";
 
 function Card({ product, index, effect = "fadeInUp" }) {
     const [isVisible, setIsVisible] = useState(false);
     const domRef = useRef();
     const navigate = useNavigate();
-
+    const { addItem } = useCart();
+    const name = productRoutes.fields.name;
+    const description = productRoutes.fields.description
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -73,14 +48,14 @@ function Card({ product, index, effect = "fadeInUp" }) {
                 return `${baseClass} fadeInUp`;
         }
     };
-    const { dispatch } = useCart();
+    // const { dispatch } = useCart();
 
-    const handleAddToCart = () => {
-        dispatch({
-            type: "ADD_TO_CART",
-            payload: item,
-        });
-    };
+    // const handleAddToCart = () => {
+    //     dispatch({
+    //         type: "ADD_TO_CART",
+    //         payload: item,
+    //     });
+    // };
     return (
         <div
             ref={domRef}
@@ -102,7 +77,7 @@ function Card({ product, index, effect = "fadeInUp" }) {
 
                     <button
                         className="mt-5 w-full cursor-pointer rounded-se-2xl bg-black p-3 text-white transition-colors duration-200 hover:bg-amber-800"
-                        onClick={handleAddToCart}
+                        onClick={() => addItem(product)}
                     >
                         Add To Cart
                     </button>
@@ -110,7 +85,9 @@ function Card({ product, index, effect = "fadeInUp" }) {
             </div>
 
             <div className="info">
-                <h3>{product.title}</h3>
+                <h3>{product.name}</h3>
+                <h3>{product.description}</h3>
+
                 <p className="price">{product.price} JOD</p>
             </div>
         </div>

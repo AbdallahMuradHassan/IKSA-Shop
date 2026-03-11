@@ -1,14 +1,13 @@
 import CartSummary from "../components/CartSummary";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../components/cart/CartContext";
 import CartItem from "../components/CartItem";
 
 export default function Cart() {
   const navigate = useNavigate();
-  const { state } = useCart();
-  const { cartItems } = state;
+  const { items: items } = useCart(); // <-- useCart() provides 'items' directly
 
-  if (cartItems.length === 0) {
+  if (!items || items.length === 0) {
     return (
       <div className="text-center mt-20">
         <h1 className="text-3xl font-bold">Your MegaStore Cart is empty</h1>
@@ -40,8 +39,8 @@ export default function Cart() {
 
       <div className="mt-8 flex flex-col gap-6 xl:flex-row">
         <div className="w-full xl:w-7/12">
-          {cartItems.map((item) => (
-            <CartItem key={item.id} item={item} />
+          {items.map((item) => (
+            <CartItem key={item._id} item={item} />
           ))}
         </div>
 

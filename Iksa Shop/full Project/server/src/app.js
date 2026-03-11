@@ -1,52 +1,45 @@
-const express = require("express");
-const cors = require("cors");
-const helmet = require("helmet");
-const morgan = require("morgan");
-const rateLimit = require("express-rate-limit");
+import express from "express";
+import cors from "cors";
+import morgan from "morgan";
+import cookieParser from "cookie-parser";
 
-const apiRoutes = require("./routes");
-const logger = require("./middlewares/logger");
-const notFound = require("./middlewares/notFound");
-const errorHandler = require("./middlewares/errorHandler");
+import authRoutes from "./routes/auth.routes.js";
+import userRoutes from "./routes/user.routes.js";
+import productRoutes from "./routes/product.routes.js";
+import categoryRoutes from "./routes/category.routes.js";
+import cartRoutes from "./routes/cart.routes.js";
+import supplierRoutes from "./routes/supplier.routes.js";
+import inventoryRoutes from "./routes/inventory.routes.js";
 
-function createApp() {
-    const app = express();
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
-    // Security
-    app.use(helmet());
+const app = express();
 
-    // Rate limit
-    app.use(
-        rateLimit({
-            windowMs: 60 * 1000,
-            limit: 120,
-            standardHeaders: true,
-            legacyHeaders: false,
-        })
-    );
+app.use(cookieParser());
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+}));
+app.use(express.json());
+app.use(morgan("dev"));
 
-    // CORS
-    app.use(cors({ origin: true }));
+// Base route
+app.get("/", (req, res) => {
+    res.json({ success: true, message: "POS API is running ✅" });
+});
 
-    // Body parsers
-    app.use(express.json({ limit: "1mb" }));
-    app.use(express.urlencoded({ extended: true }));
+// API routes
+const API_PREFIX = "/api/v1";
+app.use(`${API_PREFIX}/auth`, authRoutes);
+app.use(`${API_PREFIX}/users`, userRoutes);
+app.use(`${API_PREFIX}/products`, productRoutes);
+app.use(`${API_PREFIX}/categories`, categoryRoutes);
+app.use(`${API_PREFIX}/cart`, cartRoutes);
+app.use(`${API_PREFIX}/suppliers`, supplierRoutes);
+app.use(`${API_PREFIX}/inventory`, inventoryRoutes);
 
-    // Logger examples
-    app.use(logger);      // custom logger (teaching)
-    app.use(morgan("dev")); // professional logger
+// Error handling
+app.use(notFound);
+app.use(errorHandler);
 
-    // Root
-    app.get("/", (_req, res) => res.send("Session 27 - Controllers & Middleware"));
-
-    // API
-    app.use("/api", apiRoutes);
-
-    // Not found + Error handler
-    app.use(notFound);
-    app.use(errorHandler);
-
-    return app;
-}
-
-module.exports = createApp;
+export default app;

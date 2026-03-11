@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com');
+
+/* ===== COMPONENT ROOT ===== */
+.ms-form-container {
+    min-height: 97vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: -2rem !important;
+    font-family: 'Montserrat', arial, verdana;
+
+    /*background: linear-gradient(rgba(196, 102, 0, 1.6), rgba(155, 89, 182, 4.6));
+*/
+    background: linear-gradient(rgb(153 146 165), rgb(49 38 85));
+
+    width: 100%;
+}
+
+#msform {
+    width: 850px;
+    margin: x auto;
+    text-align: center;
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Form Styles */
+    #msform {
+        width: 400px;
+        margin: auto;
+        text-align: center;
+        position: relative;
+    }
+}
+
+/* Fieldset Styling & Animation */
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
+
+    /* Replaces jQuery .animate() - triggers when React mounts the component */
+    animation: fadeInScale 0.5s ease-out forwards;
+}
+
+.ms-form-container *,
+.ms-form-container *::before,
+.ms-form-container *::after {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Step Transition Animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Inputs */
+#msform input,
+#msform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-family: 'Montserrat';
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+/* Buttons */
+#msform .action-button {
+    width: 100px;
+    background: #27AE60;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 5px;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+/* Headings */
+.fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Progressbar Container */
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    counter-reset: step;
+    padding-left: 0;
+    /* Reset default UL padding */
+    width: 100%;
+    display: block;
+    height: 50px;
+}
+
+/* Individual Steps */
+#progressbar li {
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 25%;
+    float: left;
+    position: relative;
+    text-align: center;
+}
+
+/* Step Circles */
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: white;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Progressbar Connector Lines */
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: 1;
+    /* Behind the circles */
+}
+
+#progressbar li:first-child:after {
+    content: none;
+}
+
+/* Active State (Green) */
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #27AE60;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.previous {
+    background-color: #ffffff00 !important;
+    color: #fffafa !important;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding: 11px;
+    border-color: #ffffff00;
+
+}
+
+.cont {}
